@@ -17,10 +17,10 @@
   const RESUME_KEY = 'spotify-ad-resume';
   const REFRESHING_KEY = 'spotify-ad-refreshing';
   // -- Post-refresh: resume playback --------------------------------------------------
-  if (localStorage.getItem(RESUME_KEY)) {
-    localStorage.removeItem(RESUME_KEY);
+  if (sessionStorage.getItem(RESUME_KEY)) {
+    sessionStorage.removeItem(RESUME_KEY);
+    sessionStorage.removeItem(REFRESHING_KEY);
     resumePlayback();
-    return;
   }
 
   // -- Ad detection loop --------------------------------------------------------------
@@ -33,7 +33,7 @@
     if (isAd) {
       console.log("spotify-ad-refresh refresh")
       sessionStorage.setItem(REFRESHING_KEY, '1');
-      localStorage.setItem(RESUME_KEY, '1');
+      sessionStorage.setItem(RESUME_KEY, '1');
       location.reload();
     }
   }, 1500);
