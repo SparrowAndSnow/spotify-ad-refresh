@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Spotify Ad Skip
-// @namespace    https://github.com/snarrow/spotify-ad-refresh
+// @name         Spotify Ad Refresh
+// @namespace    https://github.com/SparrowAndSnow/spotify-ad-refresh
 // @version      1.0
 // @description  Detect Spotify ads and refresh the page to skip them, then resume playback
-// @author       snarrow
+// @author       SparrowAndSnow
 // @match        https://open.spotify.com/*
 // @grant        none
 // @run-at       document-idle
